@@ -1,17 +1,28 @@
-PREFIX = ${HOME}/.local
+NAME = template
+VERSION = 0.0.0
+PREFIX ?= $(HOME)/.local
+
 CC ?= cc
-CFLAGS += -Wall -Wextra
-SOURCE += lib/ds.c src/*.c
-INCLUDE += include
-OUT=out
+CFLAGS = -Wall -Wextra -Werror -pedantic -Wno-unused-parameter
 
-all: program
+SRC = lib/ds.c src/main.c
+OBJ = ds.o main.o
+INCLUDE = -Iinclude
 
-program:
-	${CC} ${CFLAGS} -I./${INCLUDE} ${SOURCE} -o ${OUT}
+all: $(NAME)
 
-run: src
-	./${OUT}
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(CFLAGS) $(INCLUDE)
+
+ds.o:
+	$(CC) -c lib/ds.c -o $@ $(CFLAGS) $(INCLUDE)
+
+main.o:
+	$(CC) -c src/main.c -o $@ $(CFLAGS) $(INCLUDE)
+
+run: $(NAME)
+	./$(NAME)
 
 clean:
-	rm ${OUT}
+	rm $(OBJ)
+	rm $(NAME)
