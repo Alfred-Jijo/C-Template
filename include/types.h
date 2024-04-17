@@ -1,4 +1,8 @@
+#ifndef TYPEDEF_H 
+#define TYPEDEF_H
+
 #include <stdint.h>
+
 typedef intptr_t isize;
 typedef uintptr_t usize;
 
@@ -11,3 +15,5 @@ typedef int8_t i8;
 typedef int16_t i16;
 typedef int32_t i32;
 typedef int64_t i64;
+
+#endif

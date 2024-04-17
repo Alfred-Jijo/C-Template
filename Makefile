@@ -10,7 +10,7 @@ all: program
 program:
 	${CC} ${CFLAGS} -I./${INCLUDE} ${SOURCE} -o ${OUT}
 
-run: src
+run: program
 	./${OUT}
 
 clean:
