@@ -20,7 +20,7 @@ ds.o:
 main.o:
 	$(CC) -c src/main.c -o $@ $(CFLAGS) $(INCLUDE)
 
-run: src
+run: $(NAME)
 	./$(NAME)
 
 clean:
