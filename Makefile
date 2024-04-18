@@ -14,11 +14,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(CFLAGS) $(INCLUDE)
 
-ds.o:
-	$(CC) -c lib/ds.c -o $@ $(CFLAGS) $(INCLUDE)
+ds.o: lib/ds.c
+	$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
 
-main.o:
-	$(CC) -c src/main.c -o $@ $(CFLAGS) $(INCLUDE)
+main.o: src/main.c
+	$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
 
 run: $(NAME)
 	./$(NAME)
