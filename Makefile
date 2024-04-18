@@ -24,5 +24,7 @@ run: $(NAME)
 	./$(NAME)
 
 clean:
-	rm $(OBJ)
-	rm $(NAME)
+	$(RM) $(OBJ)
+	$(RM) $(NAME)
+
+.PHONY: clean
