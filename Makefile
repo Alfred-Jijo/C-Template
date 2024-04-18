@@ -3,7 +3,7 @@ VERSION = 0.0.0
 PREFIX ?= $(HOME)/.local
 
 CC ?= cc
-CFLAGS = -Wall -Wextra -Werror -pedantic -Wno-unused-parameter
+CFLAGS = -Wall -Wextra -Werror -pedantic -Wno-unused-parameter -std=c99
 
 SRC = lib/ds.c src/main.c
 OBJ = $(SRC:%.c=%.o)
