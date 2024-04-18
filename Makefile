@@ -11,10 +11,6 @@ INCLUDE = -Iinclude
 
 all: $(NAME)
 
-<<<<<<< HEAD
-run: program
-	./${OUT}
-=======
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(CFLAGS) $(INCLUDE)
 
@@ -26,7 +22,6 @@ main.o:
 
 run: $(NAME)
 	./$(NAME)
->>>>>>> d43e59d4bcc553be24b9824b6d348cdd95ac28c8
 
 clean:
 	rm $(OBJ)
