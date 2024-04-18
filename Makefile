@@ -5,7 +5,7 @@ PREFIX ?= $(HOME)/.local
 CC ?= cc
 CFLAGS = -Wall -Wextra -Werror -pedantic -Wno-unused-parameter -std=c99
 
-SRC = lib/ds.c src/main.c
+SRC = $(wildcard */*.c)
 OBJ = $(SRC:%.c=%.o)
 INCLUDE = -Iinclude
 
