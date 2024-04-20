@@ -24,4 +24,4 @@ clean:
 	$(RM) $(OBJ)
 	$(RM) $(NAME)
 
-.PHONY: clean
+.PHONY: all clean
