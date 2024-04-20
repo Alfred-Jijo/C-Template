@@ -23,6 +23,7 @@ pub fn build(b: *std.Build) void {
             "-Werror",
             "-pedantic",
             "-Wno-unused-parameter",
+            "-Wshadow",
             "-std=c99",
         },
     });
