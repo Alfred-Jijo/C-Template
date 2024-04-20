@@ -10,9 +10,9 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
         .link_libc = true,
     });
-    exe.root_module.addIncludePath(.{ .path = "include" });
+    exe.root_module.addIncludePath(b.path("include"));
     exe.root_module.addCSourceFiles(.{
-        .root = .{ .path = "" },
+        .root = b.path(""),
         .files = &[_][]const u8{
             "src/main.c",
             "lib/ds.c",
