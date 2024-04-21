@@ -1,0 +1,8 @@
+NAME = template
+CFLAGS += -Wall -Wextra -Werror -pedantic -Wno-unused-parameter -Wshadow -std=c99
+INCLUDE += -Iinclude
+SRC += lib/ds.c src/main.c
+import CC=gcc
+
+: foreach $(SRC) |> $(CC) -c %f -o %o $(INCLUDE) $(CFLAGS) |> build/cache/%B.o
+: build/cache/*.o |> $(CC) %f -o %o |> build/out/$(NAME)
