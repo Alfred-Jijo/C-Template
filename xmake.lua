@@ -1,0 +1,10 @@
+set_languages("c99")
+add_rules("mode.debug", "mode.release")
+add_cflags("-Wno-unused-parameter", "-Wshadow")
+set_warnings("all", "extra", "error", "pedantic")
+add_includedirs("include")
+add_rules("plugin.compile_commands.autoupdate")
+
+target("template")
+    set_kind("binary")
+    add_files("lib/ds.c", "src/main.c")
