@@ -1,6 +1,7 @@
 #include <typedef.h>
 #include <stb_ds.h>
 #include <stdio.h>
+#include <memalloc.h>
 
 int main(void) {
 	printf("Hello, World!\n");
