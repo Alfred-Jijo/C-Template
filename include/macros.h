@@ -19,10 +19,10 @@
  *  - int: 0 on success, -1 on error (prints error message to stderr).
  */
 #define WRITE_TO_LOG(filename, message, line_number) \
-  int result = write_to_log(filename, message, line_number); \
-  if (result != 0) { \
-    return result; \
-  }
+    int result = write_to_log(filename, message, line_number); \
+    if (result != 0) { \
+        return result; \
+    }
 
 /**
  * Function: array_size
