@@ -2,6 +2,7 @@
 #define WRITE_TO_LOG_H
 
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * Function: WRITE_TO_LOG
@@ -35,6 +36,6 @@
  * Returns:
  *  - size_t: The size of the array in bytes.
  */
-size_t array_size(const void *arr);
+#define ARRAY_SIZE(arr) array_size(const void *arr)
 
 #endif
