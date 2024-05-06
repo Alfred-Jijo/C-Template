@@ -1,12 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "macros.h" // Include the header file
+#include <macros.h>
 #include <unistd.h>
 
-// Implementation of array_size function
-size_t array_size(const void *arr) {
-	return sizeof(arr) / sizeof((arr)[0]);
-}
 
 int write_to_log(const char *filename, const char *message, int line_number) {
 	FILE *fp;

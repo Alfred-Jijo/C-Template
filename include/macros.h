@@ -36,6 +36,6 @@
  * Returns:
  *  - size_t: The size of the array in bytes.
  */
-#define ARRAY_SIZE(arr) array_size(const void *arr)
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 
 #endif
