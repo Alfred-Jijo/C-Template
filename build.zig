@@ -11,11 +11,14 @@ pub fn build(b: *std.Build) void {
         .link_libc = true,
     });
     exe.root_module.addIncludePath(b.path("include"));
+    exe.root_module.addIncludePath(b.path("lib/log/src"));
     exe.root_module.addCSourceFiles(.{
         .root = b.path(""),
         .files = &[_][]const u8{
             "src/main.c",
             "lib/ds.c",
+            "lib/log/src/log.c",
+            "lib/macros.c",
         },
         .flags = &[_][]const u8{
             "-Wall",
