@@ -3,6 +3,12 @@
 
 #include <stdio.h>
 #include <stddef.h>
+#include <setjmp.h>
+
+jmp_buf savebuf;
+
+#define TRY if (setjmp(savebuf) == 0)
+#define CATCH else
 
 /**
  * Function: WRITE_TO_LOG
