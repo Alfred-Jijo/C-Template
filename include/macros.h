@@ -1,35 +1,7 @@
-#ifndef WRITE_TO_LOG_H
-#define WRITE_TO_LOG_H
+#ifndef MACROS_H
+#define MACROS_H
 
 #include <stdio.h>
-#include <stddef.h>
-#include <setjmp.h>
-
-jmp_buf savebuf;
-
-#define TRY if (setjmp(savebuf) == 0)
-#define CATCH else
-
-/**
- * Function: WRITE_TO_LOG
- * 
- * Description: Writes a message with a line number to a file ending in ".log".
- *              Creates a new file if it doesn't exist or appends to 
- *              an existing one.
- * 
- * Params:
- *  - filename (const char*): The name of the file to write to (must end with ".log").
- *  - message (const char*): The message to write to the file.
- *  - line_number (int): The line number where the message is written.
- * 
- * Returns:
- *  - int: 0 on success, -1 on error (prints error message to stderr).
- */
-#define WRITE_TO_LOG(filename, message, line_number) \
-    int result = write_to_log(filename, message, line_number); \
-    if (result != 0) { \
-        return result; \
-    }
 
 /**
  * Function: array_size
@@ -44,4 +16,4 @@ jmp_buf savebuf;
  */
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 
-#endif
+#endif // MACROS_H
